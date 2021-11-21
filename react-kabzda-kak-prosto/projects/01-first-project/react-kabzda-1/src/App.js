@@ -1,7 +1,7 @@
-import './logo.svg';
+//import './logo.svg';
 import './App.css';
-import Technologies from "./Technologies";
-import Header from "./Header";
+import Technologies from "./Technologies.js";
+import Header from "./Header.js";
 
 
 const App = () => {
