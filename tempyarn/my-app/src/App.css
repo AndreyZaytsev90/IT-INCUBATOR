@@ -1,4 +1,34 @@
 .app-wrapper {
+
  display: grid;
+ margin: 0 auto;
+ width: 1200px;
+ grid-template-areas:
+"header header"
+"nav content";
+ grid-template-rows: 60px 1fr;
+ grid-auto-columns: 2fr 10fr;
+ grid-gap: 10px;
 }
 
+
+.header {
+grid-area: header;
+ background-color: green;
+}
+.header img {
+width: 100px;
+ padding-top: 15px;
+}
+
+.nav {
+grid-area: nav;
+ background-color: burlywood;
+ align-self: start;
+}
+
+.content {
+grid-area: content;
+ background-color: cornflowerblue;
+
+}
