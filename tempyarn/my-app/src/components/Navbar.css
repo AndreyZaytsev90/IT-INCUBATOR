@@ -1,0 +1,9 @@
+.nav {
+    grid-area: nav;
+    background-color: burlywood;
+    align-self: start;
+}
+
+.item {
+    color: white;
+}
