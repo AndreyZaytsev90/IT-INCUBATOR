@@ -13,23 +13,7 @@
 }
 
 
-.header {
-grid-area: header;
- background-color: green;
-}
-.header img {
-width: 100px;
- padding-top: 15px;
-}
 
-.nav {
-grid-area: nav;
- background-color: burlywood;
- align-self: start;
-}
 
-.content {
-grid-area: content;
- background-color: cornflowerblue;
 
-}
+
