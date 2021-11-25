@@ -1,8 +1,9 @@
 .content {
-    grid-area: content;
+    grid-area: c;
     background-color: cornflowerblue;
 
 }
-.item {
 
+.item {
+    color: green;
 }

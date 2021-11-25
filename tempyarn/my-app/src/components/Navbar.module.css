@@ -1,7 +1,6 @@
 .nav {
-    grid-area: nav;
+    grid-area: n;
     background-color: burlywood;
-    align-self: start;
 }
 
 .item {
