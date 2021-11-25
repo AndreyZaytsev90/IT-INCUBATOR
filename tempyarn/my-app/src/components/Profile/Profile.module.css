@@ -1,9 +1,14 @@
 .content {
     grid-area: c;
     background-color: cornflowerblue;
+    border-radius: 15px;
 
 }
 
 .item {
     color: green;
+}
+
+.content img {
+    border-radius: 15px;
 }
