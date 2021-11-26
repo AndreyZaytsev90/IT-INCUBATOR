@@ -6,14 +6,11 @@ type PostPropsType = {
 }
 
 const Post = (props : PostPropsType) => {
-
-    console.log(props.message)
-
     return <div>My posts
 
             <div className={s.item}><img alt=""
                                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBX73_sltwESW05Q06z-3n--ppAVp3AO8Y8g&usqp=CAU"/>
-                post 1
+                {props.message}
                 <div>
                     <span>like</span>
                 </div>

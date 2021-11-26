@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 
 
 
-const MyPosts = () => {
+const MyPosts = (props: any) => {
     return <div>My posts
         <div>
             <div><textarea>Your text...</textarea>
