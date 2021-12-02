@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 type DialogItemPropsType = {
     name: string
-    id: string
+    id: number
 }
 
 type MessagePropsType = {
@@ -20,25 +20,34 @@ const DialogItem = (props: DialogItemPropsType) => {
 }
 
 const Message = (props: MessagePropsType) => {
-  return <div className={s.dialog}>{props.message}</div>
+    return <div className={s.dialog}>{props.message}</div>
 }
 
 const Dialogs = () => {
+
+    let dialogsData = [
+        {id: 1, name: "Andrew"},
+        {id: 2, name: "Olga"},
+        {id: 3, name: "Petr"},
+        {id: 4, name: "Sergey"},]
+
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
 
-                <DialogItem name="Andrew" id="1"/>
-                <DialogItem name="Olga" id="2"/>
-                <DialogItem name="Petr" id="3"/>
-                <DialogItem name="Sergey" id="4"/>
+                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
+                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
+                <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>
+                <DialogItem name={dialogsData[3].name} id={dialogsData[3].id}/>
+
 
             </div>
             <div className={s.messages}>
                 <div>
-                    <Message message = "Hi"/>
-                    <Message message = "How is your it-kamasutra"/>
-                    <Message message = "Yo"/>
+                    <Message message="Hi"/>
+                    <Message message="How is your it-kamasutra"/>
+                    <Message message="Yo"/>
                 </div>
             </div>
         </div>
