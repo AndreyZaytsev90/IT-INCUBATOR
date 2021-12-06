@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
 
-type TaskType = {
+export type TaskType = {
     id: number
     title: string
     isDone: boolean
@@ -26,8 +26,14 @@ function App() {
     //UI:
     return (
         <div className="App">
-            <TodoList title={todoListTitle_1}/>
-            <TodoList title={todoListTitle_2}/>
+            <TodoList
+                title={todoListTitle_1}
+                tasks={tasks_1}
+            />
+            <TodoList
+                title={todoListTitle_2}
+                tasks={tasks_2}
+            />
         </div>
     );
 }
