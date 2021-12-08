@@ -1,14 +1,19 @@
 .messageItem {
     display: grid;
+    grid-auto-columns: 100px 100px;
+    grid-template-areas:
+"a m"
 }
 
 .avatar img {
     grid-area: a;
-    width: 70px;
-    height: 70px;
+    width: 63px;
+    height: 63px;
 }
 
 .message {
     grid-area: m;
+    border: solid red;
+     ;
 
 }

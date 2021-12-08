@@ -18,8 +18,6 @@ const Message = (props: MessagePropsType) => {
                 <div>{props.time}</div>
             </div>
         </div>
-
-
     )
 }
 
