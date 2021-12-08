@@ -1,3 +1,14 @@
+.messageItem {
+    display: grid;
+}
+
+.avatar img {
+    grid-area: a;
+    width: 70px;
+    height: 70px;
+}
+
 .message {
+    grid-area: m;
 
 }

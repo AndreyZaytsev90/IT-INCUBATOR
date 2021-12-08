@@ -1,4 +1,5 @@
 import React from 'react'
+import Message from './Message'
 
 const messageData = {
     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
@@ -7,11 +8,11 @@ const messageData = {
     time: '22:00',
 }
 
-function HW1() {
+const HW1 = () => {
     return (
         <div>
             <hr/>
-            homeworks 1
+            <h2>homeworks 1</h2>
 
             {/*should work (должно работать)*/}
 
