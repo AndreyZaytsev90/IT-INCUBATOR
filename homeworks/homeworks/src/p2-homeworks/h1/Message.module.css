@@ -10,21 +10,24 @@
     width: 75px;
     height: 75px;
 }
+.name {
+    margin-left: 10px;
+    color: blueviolet;
+}
 
-/*.message {
-    grid-area: m;
-    border: solid aquamarine;
-     ;
-    width: 200px;
-    height: 63px;
-    margin-top: -9px;
-    background-color: aquamarine;
-    border-radius: 15px;
-}*/
+.insideMassage {
+    margin-left: 10px;
+}
 
+.time {
+    margin-left: 158px;
+    font-size: small;
+    margin-top: 5px;
+    color: cadetblue;
+}
 .message {
     width: 200px;
-    height: 70px;
+    height: 68px;
     margin-left: 2px;
     background: #B5DDD4;
     position: relative;

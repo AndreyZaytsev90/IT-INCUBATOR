@@ -13,9 +13,9 @@ const Message = (props: MessagePropsType) => {
         <div className={s.messageItem}>
             <div className={s.avatar}><img src={props.avatar} alt="avatar"/></div>
             <div className={s.message}>
-                <div>{props.name}</div>
-                <div>{props.message}</div>
-                <div>{props.time}</div>
+                <div className={s.name}>{props.name}</div>
+                <div className={s.insideMassage}>{props.message}</div>
+                <div className={s.time}>{props.time}</div>
             </div>
         </div>
     )
