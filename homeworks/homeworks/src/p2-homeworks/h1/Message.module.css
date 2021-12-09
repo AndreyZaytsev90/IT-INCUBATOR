@@ -13,7 +13,11 @@
 
 .message {
     grid-area: m;
-    border: solid red;
+    border: solid aquamarine;
      ;
-
+    width: 200px;
+    height: 63px;
+    margin-top: -9px;
+    background-color: aquamarine;
+    border-radius: 15px;
 }
