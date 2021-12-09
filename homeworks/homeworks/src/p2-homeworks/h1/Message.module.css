@@ -7,11 +7,11 @@
 
 .avatar img {
     grid-area: a;
-    width: 63px;
-    height: 63px;
+    width: 75px;
+    height: 75px;
 }
 
-.message {
+/*.message {
     grid-area: m;
     border: solid aquamarine;
      ;
@@ -20,4 +20,24 @@
     margin-top: -9px;
     background-color: aquamarine;
     border-radius: 15px;
+}*/
+
+.message {
+    width: 200px;
+    height: 70px;
+    margin-left: 2px;
+    background: #B5DDD4;
+    position: relative;
+    border-radius: 10px;
+}
+.message :before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 100%;
+    top: calc(50% + 10px);
+    border-top: 8px solid transparent;
+    border-right: 15px solid #B5DDD4;
+    border-bottom: 8px solid transparent;
 }
