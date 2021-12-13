@@ -5,9 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {splitIntoWords} from "./01-hello-tests/01";
 
-const sentense = "Hello my friends!";
+const sentense = "Hello my friend!";
 const result = splitIntoWords(sentense)
-console.log(result)
+console.log(result[0] === "Hello")
+console.log(result[1] === "my")
+console.log(result[2] === "friend")
 
 ReactDOM.render(
     <React.StrictMode>
