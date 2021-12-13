@@ -1,4 +1,4 @@
-import {mult, sum} from "./01";
+import {mult, splitIntoWords, sum} from "./01";
 
 
 test("sum should be correct", () => {
@@ -27,3 +27,16 @@ test("multiply should be correct", () => {
     expect(result1).toBe(2)
     expect(result2).toBe(6)
 })
+
+test("splitting into words should be correct",() => {
+    //data
+    const sent1 = "Hello my friend!"
+    const sent2 = "JS - the best programming language"
+    //action
+    const result1= splitIntoWords(sent1)
+    const result2= splitIntoWords(sent2)
+    //expert result
+    expect(result1.length).toBe(3)
+    expect(result1[0])
+})
+
