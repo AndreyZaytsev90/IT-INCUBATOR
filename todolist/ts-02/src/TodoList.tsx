@@ -4,16 +4,28 @@ import {TaskType} from "./App";
 type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
+    removeTask: (id: number) => void
 }
 
 
 const TodoList = (props: TodoListPropsType) => {
-
-    const tasksElements = props.tasks.map(task => {
+   /* const getTaskListItem = (task: TaskType) => {
         return (
             <li>
                 <input type="checkbox" checked={task.isDone}/>
                 <span>{task.title}</span>
+            </li>
+        )
+
+    }*/
+
+    const tasksList = props.tasks.map((task: TaskType) => { //tasks - массив, task - элемент массива
+        const removeTask = () => props.removeTask(task.id)
+        return (
+            <li key={task.id}>
+                <input type="checkbox" checked={task.isDone}/>
+                <span>{task.title}</span>
+                <button onClick={removeTask}>x</button>
             </li>
         )
     })
@@ -26,7 +38,7 @@ const TodoList = (props: TodoListPropsType) => {
                 <button>+</button>
             </div>
             <ul>
-                {tasksElements}
+                {tasksList}
             </ul>
             <div>
                 <button>All</button>
