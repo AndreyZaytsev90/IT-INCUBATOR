@@ -9,15 +9,15 @@ type TodoListPropsType = {
 
 
 const TodoList = (props: TodoListPropsType) => {
-   /* const getTaskListItem = (task: TaskType) => {
-        return (
-            <li>
-                <input type="checkbox" checked={task.isDone}/>
-                <span>{task.title}</span>
-            </li>
-        )
+    /* const getTaskListItem = (task: TaskType) => {
+         return (
+             <li>
+                 <input type="checkbox" checked={task.isDone}/>
+                 <span>{task.title}</span>
+             </li>
+         )
 
-    }*/
+     }*/
 
     const tasksList = props.tasks.map((task: TaskType) => { //tasks - массив, task - элемент массива
         const removeTask = () => props.removeTask(task.id)

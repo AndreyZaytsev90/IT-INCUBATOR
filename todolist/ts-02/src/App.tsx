@@ -12,16 +12,16 @@ export type TaskType = {
 function App() {
     //BLL :
 
-    const result = useState([
+    const [tasks, setTasks] = useState<Array<TaskType>>([                 // в консоли будет 0 (изначальные данные) и 1 - функция
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "React", isDone: true},
         {id: 4, title: "Redux", isDone: false},
         {id: 5, title: "Angular/Vue", isDone: false},
     ])
-    console.log(result)
-    const tasks = result[0]
-    const setTasks = result[1]
+  //  console.log(result)
+   /* const tasks = result[0] // изначальные данные (все что угодно)
+    const setTasks = result[1] */// функция
 
     const todoListTitle: string = "What to learn"
 
@@ -33,10 +33,10 @@ function App() {
         {id: 5, title: "Angular/Vue", isDone: false},
     ]*/
     const removeTask = (id: number) => { //2
-        const filteredTasks: Array<TaskType> = tasks.filter(task => task.id !== id)
-       // return undefined - по умолчанию
-        setTasks(filteredTasks)
-        console.log(tasks)
+       // const filteredTasks: Array<TaskType> = tasks.filter(task => task.id !== id)  // можно через .forEach. Можно удалить переменную filteredTasks и tasks.filter(task => task.id !== id) сразу в setTasks
+        // return undefined - по умолчанию
+        setTasks(tasks.filter(task => task.id !== id))
+       // console.log(tasks)
     }
     //UI:
     return (
