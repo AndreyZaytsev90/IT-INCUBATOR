@@ -46,8 +46,8 @@ beforeEach(() => {
     }
 })
 
-test("city should contains 3 houses", () => {
-    expect(city.houses[0].length).toBe(3);
+test.skip("city should contains 3 houses", () => {
+  //  expect(city.houses[0].length).toBe(3);
 
     expect(city.houses[0].buildedAt).toBe(2013);
     expect(city.houses[0].repaired).toBe(false);

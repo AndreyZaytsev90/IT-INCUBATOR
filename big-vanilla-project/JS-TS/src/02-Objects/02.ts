@@ -2,7 +2,6 @@ type LocalCityType = {
     title: string
     countryTitle: string
 }
-
 type AddressType = {
     streetTitle: string
     city: LocalCityType
@@ -11,7 +10,7 @@ type TechType = {
     id: number
     title: string
 }
-type StudentType = {
+export type StudentType = {
     id: number
     name: string
     age: number
@@ -21,7 +20,7 @@ type StudentType = {
 }
 
 
-const student: StudentType = {
+export const student: StudentType = {
     id: 1,
     name: "Andrey",
     age: 31,
@@ -54,3 +53,4 @@ console.log(student.age)
 console.log(student.name)
 console.log(student.address.city.title)
 console.log(student.technologies[2].title)
+

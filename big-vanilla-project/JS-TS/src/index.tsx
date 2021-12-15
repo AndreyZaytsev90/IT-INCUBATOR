@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {sum} from "./03-Function/03";
 
+const a = sum
 
 ReactDOM.render(
     <React.StrictMode>
