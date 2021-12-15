@@ -2,6 +2,7 @@ type LocalCityType = {
     title: string
     countryTitle: string
 }
+
 type AddressType = {
     streetTitle: string
     city: LocalCityType
