@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import TodoList from "./TodoList";
+import { TodoList } from './TodoList';
+
 
 export type TaskType = {
     id: number
@@ -26,14 +27,8 @@ function App() {
     //UI:
     return (
         <div className="App">
-            <TodoList
-                title={todoListTitle_1}
-                tasks={tasks_1}
-            />
-            <TodoList
-                title={todoListTitle_2}
-                tasks={tasks_2}
-            />
+            <TodoList title={todoListTitle_1} tasks={tasks_1}/>
+            <TodoList title={todoListTitle_2} tasks={tasks_2}/>
         </div>
     );
 }

@@ -7,7 +7,7 @@ type TodoListPropsType = {
 }
 
 
-const TodoList = (props: TodoListPropsType) => {
+export const TodoList = (props: TodoListPropsType) => {
     return (
         <div>
             <h3>{props.title}</h3>
@@ -32,4 +32,3 @@ const TodoList = (props: TodoListPropsType) => {
     )
 }
 
-export default TodoList
