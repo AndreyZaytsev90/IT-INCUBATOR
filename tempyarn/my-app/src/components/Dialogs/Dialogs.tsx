@@ -9,6 +9,7 @@ type DialogItemPropsType = {
 
 type MessagePropsType = {
     message: string
+    id: number
 }
 
 const DialogItem = (props: DialogItemPropsType) => {
@@ -33,7 +34,7 @@ const Dialogs = () => {
 
     let messagesData = [
         {id: 1, message: "Hi"},
-        {id: 2, message: "How is your it-kamasutra"},
+        {id: 2, message: "How is your it-kamasutra?"},
         {id: 3, message: "Yo"},]
 
 
@@ -50,9 +51,9 @@ const Dialogs = () => {
             </div>
             <div className={s.messages}>
                 <div>
-                    <Message message={messagesData[0].message}/>
-                    <Message message={messagesData[1].message}/>
-                    <Message message={messagesData[2].message}/>
+                    <Message message={messagesData[0].message} id={messagesData[0].id}/>
+                    <Message message={messagesData[1].message} id={messagesData[1].id}/>
+                    <Message message={messagesData[2].message} id={messagesData[2].id}/>
                 </div>
             </div>
         </div>
