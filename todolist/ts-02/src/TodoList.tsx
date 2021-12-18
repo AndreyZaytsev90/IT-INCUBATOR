@@ -27,7 +27,7 @@ const TodoList = (props: TodoListPropsType) => {
             <li key={task.id}>
                 <input type="checkbox" checked={task.isDone}/>
                 <span>{task.title}</span>
-                <button onClick={removeTask}>x</button>
+                <button onClick={removeTask}>х</button>
             </li>
         )
     })

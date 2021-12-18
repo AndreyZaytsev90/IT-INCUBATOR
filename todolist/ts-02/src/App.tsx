@@ -16,7 +16,7 @@ function App() {
     const todoListTitle: string = "What to learn"
 
     const [filter, setFilter] = useState<FilterValuesType>("all")
-
+        // set - установить, установка.     Set ставиться перед стэйтом(filter  в данном случаее) по соглашению рпзрпботчиков
 
     const [tasks, setTasks] = useState<Array<TaskType>>([ // в консоли будет 0 (изначальные данные) и 1 - функция
         {id: 1, title: "HTML&CSS", isDone: true},
