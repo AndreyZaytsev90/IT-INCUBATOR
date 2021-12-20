@@ -12,12 +12,11 @@ export type TaskType = {
 export type FilterValuesType = "all" | "active" | "completed"
 
 function App() {
-    console.log(v1())
+    //console.log(typeof v1())
     //BLL :
     const todoListTitle: string = "What to learn"
 
     const [filter, setFilter] = useState<FilterValuesType>("all")
-
 
     const [tasks, setTasks] = useState<Array<TaskType>>([
         {id: v1(), title: "HTML&CSS", isDone: true},
@@ -32,6 +31,7 @@ function App() {
     const removeTask = (id: string) => {
         setTasks(tasks.filter(task => task.id !== id))
     }
+    //console.dir(removeTask)
 
     const getTasksForRender = () => {
         switch (filter) {
