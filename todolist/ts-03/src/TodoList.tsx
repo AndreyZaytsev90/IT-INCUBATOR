@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent, ChangeEvent, MouseEvent} from "react";
+import React, {useState, KeyboardEvent, ChangeEvent} from "react";
 import {FilterValuesType, TaskType} from "./App";
 
 type TodoListPropsType = {
