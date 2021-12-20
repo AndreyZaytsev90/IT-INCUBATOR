@@ -32,6 +32,16 @@ function App() {
         setTasks(tasks.filter(task => task.id !== id))
     }
     //console.dir(removeTask)
+    const addTask = () => {
+        const newTask: TaskType = {
+            id: v1(),
+            title: "Hey!!",
+            isDone: false
+        }
+        const copyState = [...tasks] // копия стэйта, для того чтобы реакт увидил изменения. в старом массиве изменений он не увидит. Нужно сравнивать копию и старый массив
+        copyState.unshift(newTask)
+        setTasks(copyState)
+    }
 
     const getTasksForRender = () => {
         switch (filter) {
@@ -52,6 +62,7 @@ function App() {
                 tasks={getTasksForRender()}
                 removeTask={removeTask}
                 changeFilter={changeFilter}
+                addTask={addTask}
             />
         </div>
     );
