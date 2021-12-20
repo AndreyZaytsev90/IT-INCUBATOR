@@ -36,10 +36,6 @@ const TodoList = (props: TodoListPropsType) => {
     const onClickSetActiveFilter = () => props.changeFilter("active")
     const onClickSetCompletedFilter = () => props.changeFilter("completed")
 
-
-
-
-
     return (
         <div>
             <h3>{props.title}</h3>
