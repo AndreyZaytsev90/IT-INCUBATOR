@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { v1 } from 'uuid';
+import {v1} from 'uuid';
 import './App.css';
 import TodoList from "./TodoList";
 
@@ -32,15 +32,19 @@ function App() {
         setTasks(tasks.filter(task => task.id !== id))
     }
     //console.dir(removeTask)
-    const addTask = () => {
-        const newTask: TaskType = {
-            id: v1(),
-            title: "Hey!!",
-            isDone: false
-        }
-        const copyState = [...tasks] // копия стэйта, для того чтобы реакт увидил изменения. в старом массиве изменений он не увидит. Нужно сравнивать копию и старый массив
-        copyState.unshift(newTask)
-        setTasks(copyState)
+    const addTask = (title: string) => {
+        /* const newTask: TaskType = {
+             id: v1(),
+             title: "Hey!!",
+             isDone: false
+         }*/
+        //const copyState = [newTask, ...tasks] // копия стэйта, для того чтобы реакт увидил изменения. в старом массиве изменений он не увидит. Нужно сравнивать копию и старый массив
+        /*  setTasks([{
+              id: v1(),
+              title: "Hey!!",
+              isDone: false
+          }, ...tasks])*/
+        setTasks([{id: v1(), title: title, isDone: false}, ...tasks]) // можно просто title
     }
 
     const getTasksForRender = () => {
