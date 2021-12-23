@@ -32,6 +32,13 @@ const Dialogs = () => {
         {id: 3, name: "Petr"},
         {id: 4, name: "Sergey"},]
 
+    let dialogsElements = [
+        <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>, // Массив JSX элементов
+        <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>,
+        <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>,
+        <DialogItem name={dialogsData[3].name} id={dialogsData[3].id}/>
+    ];
+
     let messagesData = [
         {id: 1, message: "Hi"},
         {id: 2, message: "How is your it-kamasutra?"},
@@ -41,19 +48,18 @@ const Dialogs = () => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
+                {dialogsElements}
 
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
+                {/*     <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
                 <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
                 <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>
-                <DialogItem name={dialogsData[3].name} id={dialogsData[3].id}/>
-
-
+                <DialogItem name={dialogsData[3].name} id={dialogsData[3].id}/>*/}
             </div>
             <div className={s.messages}>
                 <div>
-                    <Message message={messagesData[0].message} id={messagesData[0].id}/>
+                    {/*  <Message message={messagesData[0].message} id={messagesData[0].id}/>
                     <Message message={messagesData[1].message} id={messagesData[1].id}/>
-                    <Message message={messagesData[2].message} id={messagesData[2].id}/>
+                    <Message message={messagesData[2].message} id={messagesData[2].id}/>*/}
                 </div>
             </div>
         </div>
