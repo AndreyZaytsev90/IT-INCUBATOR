@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import CounterScreen from "./CounterScreen";
+import Inc from './Inc';
+import Reset from "./Reset";
+
+type CounterType = {
+    id: number
+    title: number
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [value, setValue] = useState<number>(0)
+
+    const inc = () => value < 5 && setValue(value+1)
+    const res = () => setValue(0)
+
+
+
+
+
+
+    return (
+        <div className="counter">
+            <div className="counter-screen">
+                {/* <CounterScreen />*/}
+                {value}
+            </div>
+            <div className="counter-buttons">
+
+                    <Inc onClickHandler={inc} isDisabled={value === 5}/>
+                    <Reset  onClickHandler={res} isDisabled={value === 0}/>
+
+            </div>
+        </div>
+    );
 }
 
 export default App;
