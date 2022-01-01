@@ -42,7 +42,15 @@
     margin-left: 5px;
 }
 
-.value {
+.value  {
     padding-top: 65px;
     padding-left: 155px;
+}
+
+.rednumber {
+    color: red;
+}
+
+.whitenumber {
+    color: white;
 }
