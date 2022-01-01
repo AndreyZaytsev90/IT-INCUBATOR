@@ -1,21 +1,23 @@
 import React, {useState} from 'react';
-import './App.css';
-import CounterScreen from "./CounterScreen";
+import s from './App.css';
+//import CounterScreen from "./CounterScreen";
 import Inc from './Inc';
 import Reset from "./Reset";
 
 type CounterType = {
-    id: number
-    title: number
+    value: number
+    NumberColors: () => void
 }
 
 
-function App() {
+function App(props: CounterType) {
 
     const [value, setValue] = useState<number>(0)
 
     const inc = () => value < 5 && setValue(value+1)
     const res = () => setValue(0)
+
+    const NumberColors = () => props.value ==== 5 ? s.red : s.white
 
 
 
@@ -26,7 +28,7 @@ function App() {
         <div className="counter">
             <div className="counter-screen">
                 {/* <CounterScreen />*/}
-                {value}
+              <div className="value">{value}</div>
             </div>
             <div className="counter-buttons">
 

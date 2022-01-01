@@ -6,7 +6,7 @@
     border-style: solid;
     border-width:  5px 5px 5px 5px;
     border-color: cornflowerblue;
-    position: fixed;
+    position: absolute;
     top: 20%;
     left: 40%;
     width: 400px;
@@ -40,4 +40,9 @@
 
 .reset {
     margin-left: 5px;
+}
+
+.value {
+    padding-top: 65px;
+    padding-left: 155px;
 }
