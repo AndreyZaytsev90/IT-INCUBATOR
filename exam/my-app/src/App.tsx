@@ -3,20 +3,21 @@ import style from './App.module.css';
 //import CounterScreen from "./CounterScreen";
 import Inc from './Inc';
 import Reset from "./Reset";
+import './App.module.css'
 
-type CounterType = {
-    value: number
-}
+/*type CounterType = {
+   value: number
+}*/
 
 
-function App(props: CounterType) {
+function App() {
 
     const [value, setValue] = useState<number>(0)
 
     const inc = () => value < 5 && setValue(value+1)
     const res = () => setValue(0)
 
-    const NumberColors = props.value >= 5 ? style.red : style.black
+    const NumberColors = value >= 5 ? style.red : style.black
 
     return (
         <div className="counter">
