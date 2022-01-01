@@ -42,15 +42,15 @@
     margin-left: 5px;
 }
 
-.value  {
+.red {
+    color: red;
+    font-size: large;
     padding-top: 65px;
     padding-left: 155px;
 }
 
-.rednumber {
-    color: red;
-}
-
-.whitenumber {
-    color: white;
+.black {
+    color: black;
+    padding-top: 65px;
+    padding-left: 155px;
 }

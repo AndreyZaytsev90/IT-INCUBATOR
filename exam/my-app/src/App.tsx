@@ -6,7 +6,6 @@ import Reset from "./Reset";
 
 type CounterType = {
     value: number
-    NumberColors: () => void
 }
 
 
@@ -17,18 +16,13 @@ function App(props: CounterType) {
     const inc = () => value < 5 && setValue(value+1)
     const res = () => setValue(0)
 
-    const NumberColors = () => props.value === 5 ? style.rednumber : style.whitenumber
-
-
-
-
-
+    const NumberColors = props.value >= 5 ? style.red : style.black
 
     return (
         <div className="counter">
             <div className="counter-screen">
                 {/* <CounterScreen />*/}
-              <div className="value">{NumberColors}</div>
+              <div className={NumberColors}>{value}</div>
             </div>
             <div className="counter-buttons">
 
