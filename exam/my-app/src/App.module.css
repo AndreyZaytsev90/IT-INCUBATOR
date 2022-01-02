@@ -16,7 +16,7 @@
 
 }
 
-.counter-screen {
+.counterScreen {
     border-style: solid;
     background: #f0f0f0;
     border-width:  5px 5px 5px 5px;
@@ -28,19 +28,12 @@
     margin-left: 30px;
 }
 
-.counter-buttons {
+.counterButtons {
     display: inline-block;
     margin-top: 50px;
     margin-left: 160px;
 }
 
-.inc {
-    margin-right: 5px;
-}
-
-.reset {
-    margin-left: 5px;
-}
 
 .red {
     color: red;

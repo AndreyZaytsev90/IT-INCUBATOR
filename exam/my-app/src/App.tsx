@@ -20,12 +20,12 @@ function App() {
     const NumberColors = value >= 5 ? style.red : style.black
 
     return (
-        <div className="counter">
-            <div className="counter-screen">
+        <div className={style.counter}>
+            <div className={style.counterScreen}>
                 {/* <CounterScreen />*/}
               <div className={NumberColors}>{value}</div>
             </div>
-            <div className="counter-buttons">
+            <div className={style.counterButtons}>
 
                     <Inc onClickHandler={inc} isDisabled={value === 5}/>
                     <Reset  onClickHandler={res} isDisabled={value === 0}/>
