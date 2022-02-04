@@ -13,4 +13,12 @@ const compareFunc = (a, b) => {
          return 1   // любое положительное число
      }
 }
-console.log(numbers.sort(compareFunc))
+
+const compareIncreaseFunc = (a, b) => a-b    // возвращает любое отр. или любое положительное число
+
+console.log(numbers.sort(compareIncreaseFunc) === numbers ) // true
+
+// если нужно не мутировать массив. создаем копию и далее сортируем.
+console.log([...numbers].sort(compareIncreaseFunc) === numbers )// false
+
+console.log(numbers.sort(compareIncreaseFunc).reverse())
