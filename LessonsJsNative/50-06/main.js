@@ -83,7 +83,7 @@ let sortedByScores;
 console.log(sortedByScores);
 
 //6. Сформируйте массив студентов, у которых 100 и более баллов (filter)
-let  bestStudents;
+let bestStudents;
 console.log(bestStudents)
 
 //6a. Получите массив ("вырежьте") из трёх лучших студентов из массива deepCopyStudents (splice)
@@ -145,9 +145,52 @@ console.log(scoresSum)
 // значением которого является массив имён всех остальных студентов из массива students,
 // за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
 const addFriends = (students) => {
-   //..............................
+    //..............................
 }
 console.log(addFriends(students));
+
+
+let workPlace = {
+    mouse: 1,
+    keyBoard: 1,
+    monitors: {
+        monitor1: {
+            name: "BenQ",
+            model: "E220HD",
+            camera: true
+        },
+        monitor2: {
+            name: "BenQ",
+            model: "GW2265",
+            camera: false
+        }
+    },
+    mousepad: {
+        quantity: 1,
+        color: {
+            outside: "Red",
+            inside: "Black"
+        }
+    }
+}
+
+
+let workPlace2 = {...workPlace}
+workPlace2.monitors = {...workPlace.monitors}
+workPlace2.monitors.monitor1 = {...workPlace.monitors.monitor1}
+workPlace2.monitors.monitor2 = {...workPlace.monitors.monitor2}
+
+
+workPlace2.monitors.monitor2.name = "lg"
+workPlace2.keyBoard = 2
+workPlace2.mousepad.color.inside = "white"
+workPlace2.monitors.monitor2.camera = true
+
+console.log(workPlace)
+console.log(workPlace2)
+
+/*console.log(workPlace2 == workPlace)*/
+
 
 
 
