@@ -44,46 +44,62 @@ const user = {
 }
 
 //1. Создайте поверхностную копию объекта user
-let copyUser;
+copyUser = {...user}
 
+
+console.log(user)
+console.log(copyUser)
 //Проверка:
-// console.log(user===copyUser)- что должно быть в консоли?
-// console.log(user.friends===copyUser.friends)- что должно быть в консоли?
+console.log(user===copyUser) //- что должно быть в консоли? - false
+console.log(user.friends===copyUser.friends) //- что должно быть в консоли? - true
 
 //2. Полная (глубокая) копия объекта user
-let deepCopyUser;
+deepCopyUser = {...user}
+deepCopyUser.friends = [...user.friends]
 
 //Проверка:
-// console.log(user===deepCopyUser) - что должно быть в консоли?
-// console.log(user.friends===deepCopyUser.friends) - что должно быть в консоли?
+console.log(user===deepCopyUser) //- что должно быть в консоли? - false
+console.log(user.friends===deepCopyUser.friends) //- что должно быть в консоли? - false
 
 //3. Поверхностная копия массива students
-let copyStudents;
+let copyStudents = [...students]
 
 //Проверка:
-// console.log(код проверки написать самостоятельно ) - что должно быть в консоли?
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
+console.log(students===copyStudents) //- что должно быть в консоли? -false
+console.log(students[1]===copyStudents[1]) //- что должно быть в консоли?
 
 //4*. Полная (глубокая) копия массива students (map)
-let deepCopyStudents;
+let deepCopyStudents = students.map((students)=> {
+    return {...students}
+})
 
 //Проверка:
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
+
+console.log(students===deepCopyStudents) //- что должно быть в консоли?
+console.log(students.name===deepCopyStudents.name) //- что должно быть в консоли?
 
 // NB!!! Далее все преобразования выполняем не модифицируя исходный массив students
 // Вывод результатов - в консоль
 
 //5. Отсортируйте копию массива deepCopyStudents по алфавиту (sort)
-let sortedByName;
+
+/*const compareFunc = (a, b) => {
+    if (a > b) {     // менять ни чего не надо
+        return -1     // любое отр. число
+    } else {      // менять надо
+        return 1   // любое положительное число
+    }
+}*/
+
+let sortedByName = deepCopyStudents.sort((a,b)=> a.name > b.name? 1: -1)
 console.log(sortedByName);
 
 //5a. Отсортируйте deepCopyStudents по успеваемости(лучший идёт первым)(sort)
-let sortedByScores;
+let sortedByScores = deepCopyStudents.sort((a,b) => a.scores <= b.scores? 1: -1)
 console.log(sortedByScores);
 
 //6. Сформируйте массив студентов, у которых 100 и более баллов (filter)
-let bestStudents;
+let bestStudents = deepCopyStudents.filter(s => s.scores > 100)
 console.log(bestStudents)
 
 //6a. Получите массив ("вырежьте") из трёх лучших студентов из массива deepCopyStudents (splice)
@@ -174,7 +190,8 @@ let workPlace = {
     }
 }
 
-
+/*
+Пов. и глуб копирование
 let workPlace2 = {...workPlace}
 workPlace2.monitors = {...workPlace.monitors}
 workPlace2.monitors.monitor1 = {...workPlace.monitors.monitor1}
@@ -189,10 +206,11 @@ workPlace2.monitors.monitor2.camera = true
 console.log(workPlace)
 console.log(workPlace2)
 
-/*console.log(workPlace2 == workPlace)*/
+/!*console.log(workPlace2 == workPlace)*!/
 
 
 
+*/
 
 
 
