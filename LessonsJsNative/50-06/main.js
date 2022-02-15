@@ -82,15 +82,6 @@ console.log(students.name===deepCopyStudents.name) //- что должно бы�
 // Вывод результатов - в консоль
 
 //5. Отсортируйте копию массива deepCopyStudents по алфавиту (sort)
-
-/*const compareFunc = (a, b) => {
-    if (a > b) {     // менять ни чего не надо
-        return -1     // любое отр. число
-    } else {      // менять надо
-        return 1   // любое положительное число
-    }
-}*/
-
 let sortedByName = deepCopyStudents.sort((a,b)=> a.name > b.name? 1: -1)
 console.log(sortedByName);
 
@@ -105,42 +96,42 @@ console.log(bestStudents)
 //6a. Получите массив ("вырежьте") из трёх лучших студентов из массива deepCopyStudents (splice)
 //https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
-let topStudents;
+let topStudents = [...deepCopyStudents].splice(0,3,)
 console.log(topStudents)
 console.log(deepCopyStudents)
 
 //6b. Объедините массивы deepCopyStudents и topStudents так,
 // чтоб сохранился порядок сортировки (spread-оператор)
-let newDeepCopyStudents;
+let newDeepCopyStudents = topStudents.concat(deepCopyStudents)
 console.log(newDeepCopyStudents)
 
 
 //7. Сформируйте массив холостых студентов (filter)
-let notMarriedStudents;
+let notMarriedStudents = deepCopyStudents.filter(m => m.isMarried === true)
 console.log(notMarriedStudents)
 
 //8. Сформируйте массив имён студентов (map)
-let studentsNames;
+let studentsNames = deepCopyStudents.map(n => n.name)
 console.log(studentsNames)
 
 //8a. Сформируйте строку из имён студентов, разделённых
 // - пробелом (join)
 // - запятой (join)
-let nameWithSpace;
+let nameWithSpace = studentsNames.join(",")
 console.log(nameWithSpace)
-let namesWithComma;
+let namesWithComma =studentsNames.join(" ")
 console.log(namesWithComma)
 
 //9. Добавьте всем студентам свойство "isStudent" со значением true (map)
-let trueStudents;
+let trueStudents = deepCopyStudents.map(m => ({...m,isStudent: true}))
 console.log(trueStudents)
 
 //10. Nick женился. Выполните выполните соответствующие преобразование массива students (map)
-let studentsWithMarriedNick;
+let studentsWithMarriedNick = deepCopyStudents.map(m => m.name === "Nick" ? {...m, isMarried : true} : m)
 console.log(studentsWithMarriedNick)
 
 //11. Найдите студента по имени Ann (find)
-let ann;
+let ann = deepCopyStudents.find(f => f.name === "Ann")
 console.log(ann)
 
 //12. Найдите студента с самым высоким баллом (reduce)
