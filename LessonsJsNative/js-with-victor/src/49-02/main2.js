@@ -16,13 +16,14 @@ let students = [
         age: 20,
         isMarried: false,
         scores: 120
-    },{
+    },
+    {
         name: "John",
         age: 19,
         isMarried: false,
         scores: 100
     }
-    ]
+]
 
 // const names = ["Bob", "Alex", "Nick", "John"]
 // Native
@@ -64,11 +65,11 @@ console.log(getStudentsScores(students))
 
 // добавить всем студентам свойство isStudent
 
-const createIsStudent =  students.map(st => ({...st, isStudent: true}))
+const createIsStudent = students.map(st => ({...st, isStudent: true}))
 
 console.log(createIsStudent)
 
-const finishedStudent = createIsStudent.map((st) => st.age <= 20 ? {...st, isStudent: false}: st)
+const finishedStudent = createIsStudent.map((st) => st.age <= 20 ? {...st, isStudent: false} : st)
 
 console.log(finishedStudent)
 
@@ -81,3 +82,53 @@ const filteredStudentAge = finishedStudent.filter(st => st.age >= 20)
 console.log(filteredStudentAge)
 
 //44.35
+
+//самодельный MAP
+
+const getMappedArray = (arr, func) => {
+    const result = new Array() // функция-конструктор []
+    for (let i = 0; i < arr.length; i++) {
+        result.push(func(arr[i]))
+    }
+    return result
+}
+console.log(getMappedArray(students, (st) => ({...st, scores: st.scores + 10})))
+//===
+console.log(students.map((st) => ({...st, scores: st.scores + 10})))
+
+
+// самодельный фильтр
+console.log(students.filter(st => st.scores >= 90))
+
+const myFilter = (arr, func) => {
+    const result = []
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i]) === true) {
+            result.push(arr[i])
+        }
+    }
+    return result
+}
+
+const callBackFn = (st) => st.scores >= 90
+
+//===
+function callBackFn2(st) {
+    return st.scores >= 90
+}
+
+console.log(myFilter(students, callBackFn2))
+
+//самодельный find
+
+const myFind = (arr, func) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i]) === true) {
+            return arr[i]
+        }
+    }
+}
+
+console.log(myFind(students, st => st.age >= 21))
+//===
+console.log(students.find(st => st.age >= 22))
