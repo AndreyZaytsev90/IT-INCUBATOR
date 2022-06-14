@@ -4,17 +4,32 @@
 // {} - это объект (содержит сведения о произошедшим событии) -> event, ev, e, evt
 
 const small = document.getElementById("small")
+const medium = document.getElementById("medium")
+const big = document.getElementById("big")
+const a = document.getElementById("a")
 
-const onClickHandler = (e) => {
-    if(e.ctrlKey) {
-        alert("CTRL!!!!")
-    }
+const onClickHandlerSmall = (e) => {
+    e.stopPropagation() // событие далее не распространяется
+    alert("Hello!")
 }
 
+const anchorHandler = (e)=> {
+    e.preventDefault()
+    alert("Hello!")
+}
 //small.onclick = onClickHandler // назначение обработчика
 //small.onclick = null // отмена обработчика
 
-small.addEventListener("click", onClickHandler) //функция, как метод объекта (принимает тип события и функцию обработчик
+small.addEventListener("click", onClickHandlerSmall) //функция, как метод объекта (принимает тип события и функцию обработчик
 //small.removeEventListener("click", onClickHandler)
 
-// 1.08
+medium.addEventListener("click", (e) => {
+    e.stopPropagation()
+    console.log(e.currentTarget.id)
+})
+big.addEventListener("click", (e) => {
+    e.stopPropagation()
+    console.log("Cool!")
+})
+
+a.addEventListener("click", anchorHandler)
