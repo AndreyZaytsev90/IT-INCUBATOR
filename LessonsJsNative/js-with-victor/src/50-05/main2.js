@@ -58,3 +58,8 @@ let students = [
         scores: 121
     }
 ];
+
+console.log(students.sort((a,b)=> a.age-b.age)) // по возрастанию
+console.log(students.sort((a,b)=> b.scores-a.scores).reverse()) // по убыванию по очкам (по возрастанию)
+console.log(students.sort((a,b)=> a.name < b.name ? -1 : 1)) // по алфавиту
+console.log(students.sort((a,b)=> a.name.toUpperCase() < b.name.toUpperCase() ? -1 : 1)) // по алфавиту
