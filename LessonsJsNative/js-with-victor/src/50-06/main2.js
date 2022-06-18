@@ -112,42 +112,43 @@ console.log(studentsNames)
 //8a. Сформируйте строку из имён студентов, разделённых
 // - пробелом (join)
 // - запятой (join)
-let nameWithSpace;
+let nameWithSpace = [...studentsNames].join(' ')
 console.log(nameWithSpace)
-let namesWithComma;
+let namesWithComma = [...studentsNames].join(',')
 console.log(namesWithComma)
 
 //9. Добавьте всем студентам свойство "isStudent" со значением true (map)
-let trueStudents;
+let trueStudents = [...students].map((st) => ({...st, isStudent: true}))
 console.log(trueStudents)
 
-//10. Nick женился. Выполните выполните соответствующие преобразование массива students (map)
-let studentsWithMarriedNick;
+//10. Nick женился. Выполните соответствующие преобразование массива students (map)
+let studentsWithMarriedNick = [...students].map(st => st.name === "Nick"? {...st, isMarried: true} : st)
 console.log(studentsWithMarriedNick)
 
 //11. Найдите студента по имени Ann (find)
-let ann;
+let ann = [...students].find(st => st.name === "Ann")
 console.log(ann)
 
 //12. Найдите студента с самым высоким баллом (reduce)
-// - c помощью reduce
-// - не испльзуя методы массивов и Math.max()
-let bestStudent;
+// - c помощью reduce +
+// - не испльзуя методы массивов и Math.max() -
+let bestStudent = [...students].reduce((acc, st) => acc.scores > st.scores ? acc : st)
 console.log(bestStudent)
 
 //13. Найдите сумму баллов всех студентов (reduce)
 
+let sumScoresStudent = [...students].reduce((acc, st) => acc+st.scores, 0)
+console.log(sumScoresStudent)
+
 // И поднимаем руку!!!!
 
-let scoresSum;
-console.log(scoresSum)
 // 14. Д.З.:
 // Напишите функцию addFriends, которая принимает параметром массив students
 // и добавляет в каждому студенту свойство "friends",
 // значением которого является массив имён всех остальных студентов из массива students,
 // за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
 const addFriends = (students) => {
-   //..............................
+   return [...students].map(st => ({...st, friends: students.filter(n => st.name !== n.name)})) //+
 }
 console.log(addFriends(students));
 
