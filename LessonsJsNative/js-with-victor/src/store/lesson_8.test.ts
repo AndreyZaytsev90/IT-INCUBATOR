@@ -1,4 +1,6 @@
-import {getBanknoteList, getSum, getTriangleType, isEvenIndexSumGreater, getSquarePositiveIntegers, sum, sumFirstNumbers} from "./lesson_8";
+import {getBanknoteList, getSum,
+    getTriangleType, isEvenIndexSumGreater, getSquarePositiveIntegers, sum,
+    sumFirstNumbers} from "./lesson_8";
 
 
 
