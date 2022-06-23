@@ -22,7 +22,7 @@ export function getTriangleType(a: number, b: number, c: number): string {
     if (a === b && b === c) {
         return "10"
     }
-    if ((a == b && (a + b) > c) || (b == c && (c + b) > a) || (a == c && (a + c) > b)) {
+    if ((a === b && (a + b) > c) || (b === c && (c + b) > a) || (a === c && (a + c) > b)) {
         return "01"
     }
     if ((a + b) < c || (c + b) < a || (a + c) < b) {
@@ -55,8 +55,10 @@ export function getSum(number: number): number {
 
 export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
     //...здесь пишем код.
-    // В return стоит "заглушка", чтоб typescript не ругался
-    return true
+    let sumOfOdd = arr.filter((num,i) => i % 2 ? num : null).reduce((acc, num) => acc + num)
+    let sumOfEven = arr.filter((num,i) => i % 2 ? null : num).reduce((acc, num) => acc + num)
+    return sumOfEven > sumOfOdd;
+    //ГОТОВО
 }
 
 // 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив. 
