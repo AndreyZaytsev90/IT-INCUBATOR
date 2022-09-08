@@ -42,16 +42,34 @@ const sayAge = () => {
 sayAge()
 
 
-/*
 function counterCreator() {
+
   let count = 0
+
   return () => {
-    count++
+    console.log(count)
+    return count++
   }
+
 }
 
-const coun = counterCreator()
+const couter = counterCreator() // в переменную записалось то, что созвращает функция. В данном случае записалось значение в виде другой функции
 
-coun()
-coun()
-coun()*/
+couter() //0
+couter() //1
+couter() //2
+
+
+
+//Function Declaration - можно вызывать до того как функция написана
+declaration()
+function  declaration() {}
+
+//Func Expression - функция в переменной
+//expression() - ошибка
+const expression = function () {}
+const expression2 = () => {}
+
+//Объект не создает лексического окружения
+// Блок кода {} - создает лексическое окружение
+
