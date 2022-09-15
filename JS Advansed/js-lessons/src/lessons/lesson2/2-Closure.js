@@ -12,6 +12,8 @@ sayHi() // выведет Ольга
 
 //Лексическое окружение - это скрытый объект LexicalEnvironment, в нем может быть ссылка на другой объект
 
+// function/class, if/else, loops, try/catch/finally, switch, anonymous code {} - создают область видимости
+
 //Замыкание (Closure) - это способность функции запоминать в каком лексическом окружении она была создана с помощью скрытого свойства [[Environment]]
 
 /*const lexicalEnvironment = {

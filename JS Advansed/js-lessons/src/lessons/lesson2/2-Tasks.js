@@ -23,21 +23,20 @@ console.log('lesson 2');
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
-const curry = (f: (a: number, b: number, c: number) => number) => {
-  return function (a: number) {
-    return function (b: number) {
-      return function (c: number){
+const curry = (f) => {
+  return function (a) {
+    return function (b) {
+      return function (c){
         return f (a,b,c)
       }
     }
   }
 }
-function sum (a: number,b: number,c: number): number {
-  return a+b+c
+function sum (a,b,c) {
+  return a+b
 }
 let currySum = curry(sum)
-console.log(currySum(3)(6)(1))
-
+console.log(currySum(3)(6)())
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
 // const counter = makeCounter();
@@ -74,4 +73,4 @@ console.log(currySum(3)(6)(1))
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
 // just a plug
-export default () => {};
+//export default () => {};
