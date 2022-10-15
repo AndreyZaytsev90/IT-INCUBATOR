@@ -37,6 +37,8 @@ function sum (a,b,c) {
 }
 let currySum = curry(sum)
 console.log(currySum(3)(6)())
+
+
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
 // const counter = makeCounter();
