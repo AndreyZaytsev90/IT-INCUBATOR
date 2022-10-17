@@ -38,15 +38,40 @@ fetchData("https://vk.com/users", (err, data) => {
 })*/
 
 //Promise - a object
+// 2 свойства state и result
+// 3 состояния: pending, rejected, resoled
+// 3 метода: then catch finally
 
 const p = {
   state: 'pending',
   result: undefined
 }
+const get = {
+  getFile() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('File')
+        //reject(new Error('File was deleted'))
+      }, 3000)
+    })
+    return promise
+  }
+}
 
-
-const promise = new Promise(() => {})
-
-
-
+const promise = get.getFile()
 console.log(promise)
+
+//===================================THEN ======================================
+//const learn = (file) => {}
+
+promise.then((result) => {
+  console.log("Then", result)
+})
+
+//===================================ERROR ======================================
+const learn = (file) => {}
+const cry = (error) => {}
+
+promise.then(() => {
+
+})
