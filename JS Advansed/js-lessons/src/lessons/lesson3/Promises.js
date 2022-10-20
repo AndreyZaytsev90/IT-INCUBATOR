@@ -51,7 +51,7 @@ const get = {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('File')
-        //reject(new Error('File was deleted'))
+        // reject(new Error('File was deleted'))
       }, 3000)
     })
     return promise
@@ -59,19 +59,80 @@ const get = {
 }
 
 const promise = get.getFile()
-console.log(promise)
+/*console.log(promise)*/
 
 //===================================THEN ======================================
 //const learn = (file) => {}
 
-promise.then((result) => {
+/*promise.then((result) => {
   console.log("Then", result)
-})
+})*/
 
 //===================================ERROR ======================================
-const learn = (file) => {}
-const cry = (error) => {}
+const learn = (file) => {
+}
+const cry = (error) => {
+}
 
-promise.then(() => {
+/*promise.then(
+  (result) => {
+    console.log('first callback', result)
+  },
+  (error) => {
+    console.log('second callback', error)
+  },
+)*/
 
+// ======================= Only rejected result =================================
+
+/*promise.catch((error) => {
+  console.log('Error!!', error)
+})*/
+
+
+// или, но используется реже
+
+/*
+promise.then(
+  null,
+  (error) => {
+    console.log('Error!!', error)
+  })*/
+
+
+//=========================== Finally =================================
+// сюда попадаем в любом случае.
+/*promise.finally(() => {
+  console.log("HELLO, FINALLY!!")
+})*/
+
+
+//================================================================================
+
+/*
+let promise2 = promise.then((file) => {
+  console.log('then1',file)
+  //return 10
+  //throw new Error('Some error')
+  console.log(age)
 })
+
+promise2.then((result) => {
+  console.log('then2', result)
+})
+
+promise2.catch((err)=> {
+  console.log('catch', err)
+})*/
+
+
+promise
+  .then((file) => {
+    return 20
+  })
+  .then((result) => {
+    console.log(result + 10)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
