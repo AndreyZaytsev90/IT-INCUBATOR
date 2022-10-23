@@ -27,4 +27,9 @@ const whileSetTimeOutLoop = () => {
     setTimeout(whileSetTimeOutLoop, 1)
 }
 
-button.addEventListener('click', whileLoop)
+const promiseLoop = () => {
+    console.log(666)
+    Promise.resolve().then(promiseLoop)
+}
+
+button.addEventListener('click', promiseLoop)
