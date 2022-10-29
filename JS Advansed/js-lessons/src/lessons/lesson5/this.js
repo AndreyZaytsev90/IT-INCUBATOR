@@ -1,6 +1,6 @@
 //This
 
-// 'use-strict' this -> undefined, null, number, false
+// 'use-strict' this -> undefined, null, number, false -> примитивы превращаются в объекты
 
 
 // !'use-strict' this -> {?} - это объект
@@ -53,13 +53,13 @@ console.log(window.age)*/
 
 foo()*/
 
-const andrey = {
+/*const andrey = {
   name: "Andrey",
   showName() {
     //console.log(a,b)
     //console.log(this.name)
   }
-}
+}*/
 
 /*user.showName() // Andrey*/
 
@@ -91,3 +91,17 @@ olga.runCar()
 andrey.showName.call(olga, 1, 2)
 andrey.showName.apply(olga, [1,2])
 andrey.showName.bind(olga, 1)(2)*/
+
+
+//========================================== CONSTRUCTORS =============================
+
+function User(name, age) {
+    //this -> {}
+    this.name = name
+    this.age = age
+    // return this
+}
+
+const andrey = new User('Andrey', 32)
+
+console.log(andrey)
