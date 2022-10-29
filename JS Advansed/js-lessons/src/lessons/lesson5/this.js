@@ -9,7 +9,7 @@
 //2 Arrow functions
 //3 Function (not arrow) -> watch how function called
 // - like constructor -> new Function()
-// - .call() .bind() .apply()
+// - .call() .bind() .apply() - методы функции
 // someObject <----.function()
 // function() // !use-strict this -> window | in use-strict this -> undefined
 
@@ -53,27 +53,30 @@ console.log(window.age)*/
 
 foo()*/
 
-const user = {
+const andrey = {
   name: "Andrey",
   showName() {
-    console.log(this.name)
+    //console.log(a,b)
+    //console.log(this.name)
   }
 }
 
-user.showName() // Andrey
+/*user.showName() // Andrey*/
 
-const func = user.showName
-func() //
+/*const func = user.showName
+func() //*/
 
-const olga = {
+/*const olga = {
   name: "Olga",
-  showName: user.showName
-}
+ // showName: user.showName
+}*/
 
+/*
 olga.showName() // Olga
+*/
 
 
-
+/*
 const car = {
   runEngine(){
     console.log(`By ${this.name}`)
@@ -83,3 +86,8 @@ const car = {
 olga.runCar = car.runEngine
 
 olga.runCar()
+*/
+/*
+andrey.showName.call(olga, 1, 2)
+andrey.showName.apply(olga, [1,2])
+andrey.showName.bind(olga, 1)(2)*/
