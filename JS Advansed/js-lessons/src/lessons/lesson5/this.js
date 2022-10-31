@@ -14,7 +14,7 @@
 // function() // !use-strict this -> window | in use-strict this -> undefined
 
 
-//================================ARROW FUNCTIONS=======================
+//================================ARROW FUNCTIONS============================
 /*
 const func = () => {
   console.log(this)
@@ -95,6 +95,7 @@ andrey.showName.bind(olga, 1)(2)*/
 
 //========================================== CONSTRUCTORS =============================
 
+/*
 function User(name, age) {
     //this -> {}
     this.name = name
@@ -104,4 +105,18 @@ function User(name, age) {
 
 const andrey = new User('Andrey', 32)
 
-console.log(andrey)
+console.log(andrey)*/
+
+
+const group = {
+    name: "KMB-49",
+    users: ["Andrey", "Olga", "Petr"],
+
+    showUsers() {
+        this.users.forEach((user) => {
+            console.log(`${this.name}: ${user}`)
+        })
+    }
+}
+
+group.showUsers()
